@@ -3,7 +3,7 @@
 ```sh
 brew tap sagenkoder/tap
 brew trust sagenkoder/tap   # Homebrew asks you to trust third-party taps once
-brew install --cask nudge
+brew install --cask sagenkoder/tap/nudge   # the full name matters: plain "nudge" is a different app
 ```
 
 | Cask | Description |
