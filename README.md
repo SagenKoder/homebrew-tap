@@ -1,7 +1,9 @@
 # SagenKoder's Homebrew tap
 
 ```sh
-brew install --cask sagenkoder/tap/nudge
+brew tap sagenkoder/tap
+brew trust sagenkoder/tap   # Homebrew asks you to trust third-party taps once
+brew install --cask nudge
 ```
 
 | Cask | Description |
