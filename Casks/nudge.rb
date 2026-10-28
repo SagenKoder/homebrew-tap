@@ -1,6 +1,6 @@
 cask "nudge" do
-  version "1.0.0"
-  sha256 "1635c14dd2b3c3c3466033d79c3900e7329f7d92053accc1dc1214fe00ed6393"
+  version "1.0.2"
+  sha256 "b6fb924ce20d271c781e2a70a71a601fd3375caeae27ec9a0bde84ed007be9ec"
 
   url "https://github.com/SagenKoder/nudge/releases/download/v#{version}/Nudge-#{version}.dmg"
   name "Nudge"
@@ -16,10 +16,11 @@ cask "nudge" do
 
   app "Nudge.app"
 
-  uninstall quit:       "com.sagenkoder.nudge",
-            login_item: "Nudge"
+  # No login_item here: `brew upgrade` runs this too, and Nudge should keep starting at login.
+  uninstall quit: "com.sagenkoder.nudge"
 
-  zap trash: "~/Library/Preferences/com.sagenkoder.nudge.plist"
+  zap login_item: "Nudge",
+      trash:      "~/Library/Preferences/com.sagenkoder.nudge.plist"
 
   caveats <<~EOS
     Open Nudge once to grant the Accessibility permission it needs to move windows.
